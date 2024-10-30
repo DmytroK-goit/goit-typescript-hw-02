@@ -48,8 +48,8 @@ function App() {
         toast.success(`Успішно виконано! Знайдено ${data.results.length}`);
         setPhotos((prevPhotos) => [...prevPhotos, ...data.results]);
       } catch (error) {
-        setError(error.message);
-        toast.error(`Сталася помилка: ${error.message}`);
+        setError((error as Error).message);
+        toast.error(`Сталася помилка: ${(error as Error).message}`);
       } finally {
         setLoading(false);
       }

@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { GrFormSearch } from "react-icons/gr";
 import s from "./SearchBar.module.css";
 
-const SearchBar = ({ onSubmit }) => {
-  const [inputValue, setInputValue] = useState("");
+type Props = {
+  onSubmit: (value: string) => void;
+};
 
-  const handleChange = (e) => {
+const SearchBar = ({ onSubmit }: Props) => {
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit(inputValue);
   };

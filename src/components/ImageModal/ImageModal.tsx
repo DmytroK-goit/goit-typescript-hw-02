@@ -1,8 +1,13 @@
 import Modal from "react-modal";
 
-Modal.setAppElement("#root"); // Переконайся, що імпортуєш компонент Modal
+Modal.setAppElement("#root");
+type Props = {
+  isOpen: boolean;
+  onClose: () => void;
+  imageUrl: string;
+};
 
-const ImageModal = ({ isOpen, onClose, imageUrl }) => {
+const ImageModal = ({ isOpen, onClose, imageUrl }: Props) => {
   const customStyles = {
     content: {
       top: "50%",

@@ -19,7 +19,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState<string>("");
   const [totalPage, setTotalPage] = useState<number>(0);
 
-  const onSubmit = (value: any) => {
+  const onSubmit = (value: string) => {
     if (!value) {
       toast.info("Пошуковий запит не введений");
       setPhotos([]);

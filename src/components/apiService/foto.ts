@@ -12,7 +12,7 @@ interface Photo {
   urls: {
     regular: string;
     small: string;
-    thumb: string;
+    small_s3: string;
   };
   alt_description: string | null;
 }
@@ -30,8 +30,6 @@ const getPhotos = async (
   const { data } = await axios.get<ApiResponse>(
     `search/photos?query=${searchValue}&page=${page}`
   );
-  console.log(data);
-
   return data;
 };
 

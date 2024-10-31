@@ -73,6 +73,7 @@ function App() {
       <ImageGallery photos={photos} onImageClick={openModal} />
       {loading && <LoadingSpinner />}
 
+      {error && <p style={{ color: "red" }}>Сталася помилка: {error}</p>}
       {count < totalPage && <LoadMoreBtn setCount={setCount} />}
 
       <ImageModal

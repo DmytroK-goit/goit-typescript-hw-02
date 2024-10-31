@@ -1,12 +1,7 @@
 import Modal from "react-modal";
+import { PropsModal } from "../../App.typer";
 
-type Props = {
-  isOpen: boolean;
-  onClose: () => void;
-  imageUrl: string;
-};
-
-const ImageModal = ({ isOpen, onClose, imageUrl }: Props) => {
+const ImageModal = ({ isOpen, onClose, imageUrl }: PropsModal) => {
   const customStyles = {
     content: {
       top: "50%",

@@ -1,19 +1,7 @@
+import { ImageCardProp } from "../../App.typer";
 import s from "./ImageCard.module.css";
 
-type Photo = {
-  urls: {
-    small: string;
-    small_s3: string;
-  };
-  alt_description: string;
-};
-
-interface ImageCardProps {
-  photo: Photo;
-  onImageClick: (url: string) => void;
-}
-
-const ImageCard = ({ photo, onImageClick }: ImageCardProps) => {
+const ImageCard = ({ photo, onImageClick }: ImageCardProp) => {
   return (
     <div className={s.img}>
       <img

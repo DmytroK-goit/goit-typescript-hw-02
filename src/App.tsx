@@ -8,10 +8,11 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ImageModal from "./components/ImageModal/ImageModal";
 import "./App.css";
+import { Photo } from "./App.typer";
 
 function App() {
   const [searchValue, setSearchValue] = useState<string>("");
-  const [photos, setPhotos] = useState<any[]>([]);
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [count, setCount] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);

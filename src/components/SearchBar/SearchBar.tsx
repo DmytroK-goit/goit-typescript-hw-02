@@ -1,12 +1,9 @@
 import { FormEvent, useState } from "react";
 import { GrFormSearch } from "react-icons/gr";
 import s from "./SearchBar.module.css";
+import { PropsSubmit } from "../../App.typer";
 
-type Props = {
-  onSubmit: (value: string) => void;
-};
-
-const SearchBar = ({ onSubmit }: Props) => {
+const SearchBar = ({ onSubmit }: PropsSubmit) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

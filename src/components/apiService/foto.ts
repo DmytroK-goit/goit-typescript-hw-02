@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Photo } from "../../App.typer";
 
 const API_KEY: string = "zPfqKHlY8f2W7Z-xNLRkx9ipN25JRq5Yw0Irf_pQgQ8";
 axios.defaults.baseURL = "https://api.unsplash.com/";
@@ -6,16 +7,6 @@ axios.defaults.headers.common["Authorization"] = `Client-ID ${API_KEY}`;
 axios.defaults.params = {
   per_page: 16,
 };
-
-interface Photo {
-  id: string;
-  urls: {
-    regular: string;
-    small: string;
-    small_s3: string;
-  };
-  alt_description: string | null;
-}
 
 interface ApiResponse {
   results: Array<Photo>;

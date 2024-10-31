@@ -1,6 +1,5 @@
 import Modal from "react-modal";
 
-Modal.setAppElement("#root");
 type Props = {
   isOpen: boolean;
   onClose: () => void;

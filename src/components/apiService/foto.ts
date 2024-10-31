@@ -6,10 +6,31 @@ axios.defaults.headers.common["Authorization"] = `Client-ID ${API_KEY}`;
 axios.defaults.params = {
   per_page: 16,
 };
-const getPhotos = async (searchValue: string, page: number) => {
-  const { data } = await axios.get(
-    `search/photos?query=${searchValue}&page=${page}>`
+
+interface Photo {
+  id: string;
+  urls: {
+    regular: string;
+    small: string;
+    thumb: string;
+  };
+  alt_description: string | null;
+}
+
+interface ApiResponse {
+  results: Array<Photo>;
+  total: number;
+  total_pages: number;
+}
+
+const getPhotos = async (
+  searchValue: string,
+  page: number
+): Promise<ApiResponse> => {
+  const { data } = await axios.get<ApiResponse>(
+    `search/photos?query=${searchValue}&page=${page}`
   );
+  console.log(data);
 
   return data;
 };
